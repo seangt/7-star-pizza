@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>
+    	7 Star Pizza
+    </title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+   <link href='http://fonts.googleapis.com/css?family=Ubuntu:700|Open+Sans:400italic,600italic,700italic,400,700,600' rel='stylesheet' type='text/css'>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+</head>
+
+
+<body>
+
+
+<div id="header">
+	
+    <div id="logo"><a href="#" onclick="smoothScroll('');" accesskey="1"><img src="images/logo.png" alt="7 Star Logo"></a></div>
+    <ul>
+    
+    
+        
+    
+       	 
+    <li>
+    	<a href="#catering" onclick="smoothScroll('catering');">CATERING</a>
+    </li>
+        
+    <li>
+    	<a href="#coupons" onclick="smoothScroll('coupons');">COUPONS</a>
+    </li>
+    <li>
+    	<a href="https://www.orderstart.com/7starpizza" class="navbarOrder">ORDER ONLINE</br>&amp; VIEW MENU</a> 
+    </li>
+    </ul>
+    
+</div>
+
+
+<div id="content">
+	
+    <div id="contact">
+    	<div id="right">
+    		<h1>WE DELIVER!</h1>
+    		<a href="https://www.orderstart.com/7starpizza" class="navbarOrder" id="inContact">ORDER ONLINE &amp; VIEW MENU</a> 
+    		<p>or call:</p>
+    		<h1><a href="tel:+1-313-834-4800">313.834.4800</a></h1>
+    		<h1><br><br><br><br><br><br>HOURS:</h1>
+    		<p>MON-THURS 10A - 12A<br>
+    			FRI-SAT 10A - 1A<br>
+    			SUNDAY 12P - 11P
+    		</p>
+    	</div>
+    	<div id="left">
+    		<iframe id="map" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=7840%20Wyoming%20Street%2C%20Dearborn%2C%20MI%2C%20United%20States&key=AIzaSyAMWW5sTQtnzHOuHHIys45VFIl9ddIp5K8"></iframe>
+    		<p>7840 Wyoming St. Dearborn, MI</p>
+    	</div>
+    	
+    	<div style="clear:both"></div>
+	</div>
+    
+    
+    <div id="catering">
+	    <h1>Catering</h1>
+	    <p>For catering inquiries pease call us!</p>
+	    <h1><a href="tel:+1-313-834-4800">313.834.4800</a></h1>
+	   	<a href="images/catering.png" ><img src="images/catering.png" alt="7 Star Catering Menu"></a>
+
+    </div>
+    
+    
+    <div id="coupons">
+	    <h1>Coupons</h1>
+	    <p>(click to open printable versions)</p>
+	    <a href="images/coupons1.png" ><img src="images/coupons1.png" alt="7 Star Coupons"></a>
+	    <a href="images/coupons2.png" ><img src="images/coupons2.png" alt="7 Star Coupons"></a>
+	    <a href="images/coupons3.png" ><img src="images/coupons3.png" alt="7 Star Coupons"></a>
+	    
+    </div>
+    
+    
+</div>
+
+<div id="footer">
+	
+	&copy; 7 Star Pizza<br>
+	Developed by <a link href="http://theseangt.appspot.com">Sean Thomas</a>
+	
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</body> 
+
+</html>
+
+<script type="text/javascript">
+function currentYPosition() {
+    // Firefox, Chrome, Opera, Safari
+    if (self.pageYOffset) return self.pageYOffset;
+    // Internet Explorer 6 - standards mode
+    if (document.documentElement && document.documentElement.scrollTop)
+        return document.documentElement.scrollTop;
+    // Internet Explorer 6, 7 and 8
+    if (document.body.scrollTop) return document.body.scrollTop;
+    return 0;
+}
+
+function elmYPosition(eID) {
+    var elm = document.getElementById(eID);
+    var y = elm.offsetTop;
+    var node = elm;
+    while (node.offsetParent && node.offsetParent != document.body) {
+        node = node.offsetParent;
+        y += node.offsetTop;
+    } return y;
+}
+
+function smoothScroll(eID) {
+    var startY = currentYPosition();
+    var stopY = elmYPosition(eID);
+
+    var distance = stopY > startY ? stopY - startY : startY - stopY;
+    if (distance < 100) {
+        scrollTo(0, stopY); return;
+    }
+    var speed = Math.round(distance / 100);
+    if (speed >= 20) speed = 20;
+    var step = Math.round(distance / 25);
+    var leapY = stopY > startY ? startY + step : startY - step;
+    var timer = 0;
+    if (stopY > startY) {
+        for ( var i=startY; i<stopY; i+=step ) {
+            setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+            leapY += step; if (leapY > stopY) leapY = stopY; timer++;
+        } return;
+    }
+    for ( var i=startY; i>stopY; i-=step ) {
+        setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+        leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
+    }
+    return false;
+}
+
+$(document).ready(function () {
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.scrollup').fadeIn();
+        } else {
+            $('.scrollup').fadeOut();
+        }
+    });
+
+    $('.scrollup').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
+        return false;
+    });
+
+});
+
+</script>
+
