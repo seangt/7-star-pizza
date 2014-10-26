@@ -24,7 +24,9 @@
     
     
         
-    
+    <li>
+    	<a href="#about" onclick="smoothScroll('about');">ABOUT</a>
+    </li>
        	 
     <li>
     	<a href="#catering" onclick="smoothScroll('catering');">CATERING</a>
@@ -56,13 +58,53 @@
     		</p>
     	</div>
     	<div id="left">
-    		<iframe id="map" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=7840%20Wyoming%20Street%2C%20Dearborn%2C%20MI%2C%20United%20States&key=AIzaSyAMWW5sTQtnzHOuHHIys45VFIl9ddIp5K8"></iframe>
+    		<div class="overlay" onClick="style.pointerEvents='none'"></div>
+    		<iframe id="map" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=7%20star%20pizza%20dearborn%20MI&key=AIzaSyAMWW5sTQtnzHOuHHIys45VFIl9ddIp5K8"></iframe>
     		<p>7840 Wyoming St. Dearborn, MI</p>
     	</div>
     	
     	<div style="clear:both"></div>
 	</div>
     
+    <div id="about">
+	    <h1>About Us</h1>
+	    <p>7 Star Pizza offers a wide variety of delicious menu items made with high-quality ingredients including:
+	    	<ul>
+	    		<li>Pizza</li>
+	    		<li>Sub Sandwiches</li>
+	    		<li>Salads</li>
+	    		<li>Calzones</li>
+	    		<li>Broasted Chicken</li>
+	    		<li>Wings</li>
+	    		<li>Lasagna</li>
+	    		<li>Fish n' Chips</li>
+	    			<ul>
+	    				<li>Ocean Perch</li>
+	    				<li>Tilapia</li>
+	    			</ul>
+	    		<li>Breaded Jumbo Shrimp</li>
+	    		<li>Oven-Fresh Bread Stix & Cinnamon Stix</li>
+	    		<li>Delicious Side Items</li>
+	    			<ul>
+	    			<li>Fries</li>
+	    			<li>Curly Fries</li>
+	    			<li>Potato Wedges</li>
+	    			<li>Onion Rings</li>
+	    			<li>Mozzarella Cheese Stix</li>
+	    			<li>Jalapeno Poppers</li>
+	    			</ul>
+	    		<li>Desserts</li>
+	    		<li>And much more!</li>
+	    		
+	    	</ul>
+	    	
+	    	
+	    	
+	    	</p>
+	    		    <a href="https://www.orderstart.com/7starpizza" class="navbarOrder" id="inAbout">ORDER ONLINE &amp; VIEW MENU</a> 
+
+
+    </div>    
     
     <div id="catering">
 	    <h1>Catering</h1>
@@ -75,10 +117,12 @@
     
     <div id="coupons">
 	    <h1>Coupons</h1>
-	    <p>(click to open printable versions)</p>
-	    <a href="images/coupons1.png" ><img src="images/coupons1.png" alt="7 Star Coupons"></a>
-	    <a href="images/coupons2.png" ><img src="images/coupons2.png" alt="7 Star Coupons"></a>
-	    <a href="images/coupons3.png" ><img src="images/coupons3.png" alt="7 Star Coupons"></a>
+	    <p>All of our specials are also available to order online!</p>
+	    <a href="https://www.orderstart.com/7starpizza" class="navbarOrder" id="inCoupons">ORDER ONLINE &amp; VIEW MENU</a> 
+
+	    <a href="images/coupons1.png"><img src="images/coupons1.png" alt="7 Star Coupons"></a>
+	    <a href="images/coupons2.png"><img src="images/coupons2.png" alt="7 Star Coupons"></a>
+	    <a href="images/coupons3.png"><img src="images/coupons3.png" alt="7 Star Coupons"></a>
 	    
     </div>
     
